@@ -26,8 +26,8 @@ import pydicom
 
 from absl.testing import absltest
 from absl.testing import parameterized
+from hcls_imaging_ml_toolkit import dicom_web
 from data_processing import data_processing_lib
-from data_processing import dicom_client
 
 
 _TEST_DICOM_PATH = 'serving/data_processing/testdata/fake.dcm'
@@ -72,12 +72,12 @@ class MockBlobWithDicom:
 
 class MockDicomWebClient:
 
-  def __init__(self, project, dicom_store, input_credentials):
+  def __init__(self, input_credentials):
     pass
 
-  def get_pydicom(self, study_uid, series_uid, instance_uid):
-    del study_uid, series_uid, instance_uid
-    return pydicom.Dataset()
+  def WadoRs(self, dicomweb_uri):
+    del dicomweb_uri
+    return _get_test_dicom_bytes()
 
 
 class DataProcessingLibTest(parameterized.TestCase):
@@ -100,7 +100,7 @@ class DataProcessingLibTest(parameterized.TestCase):
     )
     self.assertEqual(retrieved_data, _get_test_pydicom())
 
-  @mock.patch.object(dicom_client, 'DicomWebStatefulClient', MockDicomWebClient)
+  @mock.patch.object(dicom_web, 'DicomWebClientImpl', MockDicomWebClient)
   @mock.patch.object(
       pydicom, 'dcmread', autospec=True, return_value=pydicom.Dataset()
   )

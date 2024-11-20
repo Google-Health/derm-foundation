@@ -26,11 +26,8 @@ import pydicom
 import tensorflow as tf
 
 # TODO(b/373943872): Use EZ-WSI based module.
-from hcls_imaging_ml_toolkit import dicom_path
-from data_processing import dicom_client
+from hcls_imaging_ml_toolkit import dicom_web
 from data_processing import image_utils
-
-_DICOMWEB_URI_PREFIX = 'https://healthcare.googleapis.com/v1/'
 
 _IMAGE_KEY = 'image/encoded'
 _IMAGE_FORMAT = 'image/format'
@@ -87,15 +84,9 @@ def retrieve_instance_from_dicom_store(
   Returns:
     A pydicom.Dataset containing the DICOM instance data.
   """
-  dicom_path_str = dicomweb_uri[len(_DICOMWEB_URI_PREFIX) :]
-  path = dicom_path.FromString(dicom_path_str, dicom_path.Type.INSTANCE)
-  dicom_store = f'{path.location}/{path.dataset_id}/{path.store_id}'
-  dicomweb_client = dicom_client.DicomWebStatefulClient(
-      path.project_id, dicom_store, input_credentials=creds
-  )
-  return dicomweb_client.get_pydicom(
-      path.study_uid, path.series_uid, path.instance_uid
-  )
+  dicomweb_client = dicom_web.DicomWebClientImpl(creds)
+  dicom_byte_data = dicomweb_client.WadoRs(dicomweb_uri)
+  return pydicom.dcmread(io.BytesIO(dicom_byte_data), stop_before_pixels=False)
 
 
 def process_image_bytes_to_tf_example(image_bytes: bytes) -> tf.train.Example:
