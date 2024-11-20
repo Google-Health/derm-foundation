@@ -1,0 +1,11 @@
+absl-py~=2.1.0
+google-auth-httplib2~=0.2.0
+google-auth-oauthlib~=1.2.1
+google-cloud-storage~=2.18.2
+hcls-imaging-ml-toolkit~=0.1
+immutabledict~=4.2.0
+numpy~=2.0.2
+Pillow~=11.0.0
+pydicom~=3.0.1
+pypng~=0.20220715.0
+tensorflow~=2.18.0

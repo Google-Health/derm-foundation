@@ -1,0 +1,6 @@
+absl-py~=2.1.0
+numpy~=2.0.2
+tensorflow~=2.18.0
+
+-r data_processing/requirements.txt
+-r prediction_container/requirements.txt
