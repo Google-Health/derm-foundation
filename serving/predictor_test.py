@@ -22,7 +22,7 @@ import tensorflow as tf
 
 from absl.testing import absltest
 from data_processing import data_processing_lib
-from prediction_container import model_runner
+from serving_framework import model_runner
 import predictor
 
 

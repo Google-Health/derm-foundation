@@ -28,7 +28,7 @@ from typing import Any
 from absl import app
 from absl import logging
 
-from prediction_container import server_model_runner
+from serving_framework import server_model_runner
 import predictor
 
 

@@ -15,7 +15,7 @@
 
 """Launcher for the prediction_executor based encoder server.
 
-Uses the prediction container framework to create a request server which
+Uses the servingframework to create a request server which
 performs the logic for requests in separate processes and uses a local TFserving
 instance to handle the model.
 """
@@ -26,8 +26,8 @@ import os
 from absl import app
 from absl import logging
 
-from prediction_container import inline_prediction_executor
-from prediction_container import server_gunicorn
+from serving_framework import inline_prediction_executor
+from serving_framework import server_gunicorn
 import predictor
 
 
