@@ -1,6 +1,9 @@
-# Vertex AI `predict` support
+# Serving framework
 
-This directory contains source code to help implement a container that satisfies Vertex AI's
-[custom prediction container requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements)
-so that it can be deployed to be called through the
-[predict method](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.endpoints/predict).
+This directory contains a Python library that simplifies the creation of custom
+prediction containers for Vertex AI. It provides the framework for building HTTP
+servers that meet the platform's
+[requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements).
+
+To implement a model-specific HTTP server, frame the custom data handling and
+orchestration logic within this framework.

@@ -1,19 +1,49 @@
-# Derm Foundation Serving
+# Derm Foundation serving
 
-This is a container implementation that can serve the model and is used for
-Vertex AI serving.
+This folder contains the source code and configuration necessary to serve the
+model on
+[Vertex AI](https://cloud.google.com/vertex-ai/docs/predictions/use-custom-container).
+The implementation follows this
+[container architecture](https://developers.google.com/health-ai-developer-foundations/model-serving/container-architecture).
 
-## Description for select files and folders
+The serving container can be used in both online and batch prediction workflows:
 
-*   [`Dockerfile`](./Dockerfile): This file defines the Docker image that will
-    be used to serve the model. It includes the necessary dependencies, such as
-    TensorFlow and the model server.
-*   [`requirements.txt`](./requirements.txt): This file lists the Python
-    packages that are required to run the model server.
-*   [`prediction_executor.py`](./prediction_executor.py): This file contains the
-    code for the prediction executor, which is responsible for loading the model
-    and running predictions.
-*   [`data_processing`](./data_processing): This folder contains code for
-    processing the CXR foundation dataset.
-*   [`prediction_container`](./prediction_container): This folder contains code
-    for a container that can be used to serve predictions from any model.
+*   **Online predictions**: Deploy the container as a
+    [REST](https://en.wikipedia.org/wiki/REST) endpoint, like a
+    [Vertex AI endpoint](https://cloud.google.com/vertex-ai/docs/general/deployment).
+    This allows you to access the model for real-time predictions via the REST
+    [Application Programming Interface (API)](https://developers.google.com/health-ai-developer-foundations/cxr-foundation/serving-api).
+
+*   **Batch predictions**: Use the container to run large-scale
+    [Vertex AI batch prediction jobs](https://cloud.google.com/vertex-ai/docs/predictions/get-batch-predictions)
+    to process many inputs at once.
+
+## Description of select files and folders
+
+*   [`data_processing/`](./data_processing/README.md): A library for data
+    retrieval and processing.
+
+*   [`serving_framework/`](./serving_framework/README.md): A library for
+    implementing Vertex-compatible HTTP servers.
+
+*   [`vertex_schemata/`](./vertex_schemata): Folder containing YAML files that
+    define the
+    [PredictSchemata](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/PredictSchemata)
+    for Vertex AI endpoints.
+
+*   [`Dockerfile`](./Dockerfile): Defines the Docker image for serving the
+    model.
+
+*   [`entrypoint.sh`](./entrypoint.sh): A bash script that is used as the Docker
+    entrypoint. It sets up the necessary environment variables, copies the
+    TensorFlow [SavedModel(s)](https://www.tensorflow.org/guide/saved_model)
+    locally and launches the TensorFlow server and the frontend HTTP server.
+
+*   [`predictor.py`](./predictor.py): Prepares model input, calls the model, and
+    post-processes the output into the final response.
+
+*   [`requirements.txt`](./requirements.txt): Lists the required Python
+    packages.
+
+*   [`server_gunicorn.py`](./server_gunicorn.py): Creates the HTTP server that
+    launches the prediction executor.
