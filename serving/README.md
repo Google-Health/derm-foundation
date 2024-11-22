@@ -20,10 +20,10 @@ The serving container can be used in both online and batch prediction workflows:
 
 ## Description of select files and folders
 
-*   [`data_processing/`](./data_processing/README.md): A library for data
+*   [`data_processing/`](./data_processing): A library for data
     retrieval and processing.
 
-*   [`serving_framework/`](./serving_framework/README.md): A library for
+*   [`serving_framework/`](./serving_framework): A library for
     implementing Vertex-compatible HTTP servers.
 
 *   [`vertex_schemata/`](./vertex_schemata): Folder containing YAML files that
