@@ -118,6 +118,8 @@ class Predictor:
         embedding = model.run_model(
             model_input=model_input, model_output_key='embedding'
         )
+        # Squash trivial outer dimension
+        embedding = embedding[0]
         logging.info('Ran inference on model.')
       except _PredictorError as e:
         logging.exception('Failed to get prediction for instance.')

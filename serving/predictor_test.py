@@ -66,7 +66,7 @@ class PredictorTest(absltest.TestCase):
   def test_predict_returns_correct_response(
       self, unused_mock_model_input, mock_model_runner
   ):
-    mock_model_runner.run_model.return_value = np.array([[1, 2, 3]])
+    mock_model_runner.run_model.return_value = np.array([[[1, 2, 3]]])
     response = predictor.Predictor().predict(
         request=self._request_instance,
         model=mock_model_runner,
@@ -160,7 +160,7 @@ class PredictorTest(absltest.TestCase):
   def test_predict_with_multiple_request_instances_returns_correct_response(
       self, unused_mock_retrieve, unused_mock_process, mock_model_runner
   ):
-    mock_model_runner.run_model.return_value = np.array([[1, 2, 3]])
+    mock_model_runner.run_model.return_value = np.array([[[1, 2, 3]]])
     response = predictor.Predictor().predict(
         request={
             "instances": [
@@ -192,7 +192,7 @@ class PredictorTest(absltest.TestCase):
   def test_predict_with_input_bytes_process_called_with_correct_input(
       self, mock_process, mock_model_runner
   ):
-    mock_model_runner.run_model.return_value = np.array([[1, 2, 3]])
+    mock_model_runner.run_model.return_value = np.array([[[1, 2, 3]]])
     predictor.Predictor().predict(
         request={
             "instances": [
