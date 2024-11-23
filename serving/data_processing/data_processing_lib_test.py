@@ -122,15 +122,18 @@ class DataProcessingLibTest(parameterized.TestCase):
       dict(
           testcase_name='image_bytes',
           image=_get_test_png_bytes(),
+          expected=75.4108,
       ),
       dict(
           testcase_name='dicom',
           image=_get_test_pydicom(),
+          expected=72.5136,
       ),
   )
   def test_process_image_to_tf_example_succeeds(
       self,
       image,
+      expected,
   ):
     example = data_processing_lib.process_xray_image_to_tf_example(image)
     f_dict = example.features.feature
@@ -151,7 +154,7 @@ class DataProcessingLibTest(parameterized.TestCase):
             'size': (1024, 1024),
         },
     )
-    self.assertAlmostEqual(np.average(image_2d), 75.4108, places=3)
+    self.assertAlmostEqual(np.average(image_2d), expected, places=3)
 
 
 if __name__ == '__main__':

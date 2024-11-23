@@ -104,7 +104,10 @@ def _process_xray_image_array_to_tf_example(
 ) -> tf.train.Example:
   """Creates a tf.train.Example from an X-ray image array."""
   pixel_array = image_utils.shift_to_unsigned(image_array)
-  pixel_array = image_utils.rescale_dynamic_range(pixel_array)
+  # For uint8 images, rescaling is not needed
+  # TODO(b/379190087): Add a test for this logic.
+  if pixel_array.dtype != np.uint8:
+    pixel_array = image_utils.rescale_dynamic_range(pixel_array)
   png_bytes = image_utils.encode_png(pixel_array.astype(np.uint16))
   example = process_image_bytes_to_tf_example(png_bytes)
   example.features.feature[_IMAGE_FORMAT].bytes_list.value[:] = [b'png']
