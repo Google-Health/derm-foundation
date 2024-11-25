@@ -13,21 +13,35 @@ build AI models for dermatology image analysis.
 
 ## Get started
 
+*   Read our
+    [developer documentation](https://developers.google.com/health-ai-developer-foundations/derm-foundation/get-started)
+    to see the full range of next steps available, including learning more about
+    the model through its
+    [model card](https://developers.google.com/health-ai-developer-foundations/derm-foundation/model-card)
+    or
+    [serving API](https://developers.google.com/health-ai-developer-foundations/derm-foundation/serving-api).
+
 *   Explore this repository, which contains [notebooks](./notebooks) for using
-    the model from Vertex AI as well as the [implementation](./serving) of the
-    container that you can deploy to Vertex AI.
+    the model from Hugging Face and Vertex AI as well as the
+    [implementation](./serving) of the container that you can deploy to Vertex
+    AI.
 
 *   Visit the model on
+    [Hugging Face](https://huggingface.co/google/derm-foundation) or
     [Model Garden](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/derm-foundation).
 
 ## Contributing
 
-We are open to bug reports, pull requests (PR), and other contributions. Please
+We are open to bug reports, pull requests (PR), and other contributions. See
+[CONTRIBUTING](CONTRIBUTING.md) and
+[community guidelines](https://developers.google.com/health-ai-developer-foundations/community-guidelines)
+for details.
+
 see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## License
 
 While the model is licensed under the
-[Health AI Developer Foundations License](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/derm-foundation),
+[Health AI Developer Foundations License](https://developers.google.com/health-ai-developer-foundations/terms),
 everything in this repository is licensed under the Apache 2.0 license, see
 [LICENSE](LICENSE).
