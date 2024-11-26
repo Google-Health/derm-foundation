@@ -20,8 +20,8 @@ sign a new one.
 
 ### Review our Community Guidelines
 
-This project follows
-[Google's Open Source Community Guidelines](https://opensource.google/conduct/).
+This project follows HAI-DEF's
+[Community guidelines](https://developers.google.com/health-ai-developer-foundations/community-guidelines)
 
 ## Contribution process
 
@@ -30,3 +30,6 @@ This project follows
 All submissions, including submissions by project members, require review. We
 use [GitHub pull requests](https://docs.github.com/articles/about-pull-requests)
 for this purpose.
+
+For more details, read HAI-DEF's
+[Contributing guidelines](https://developers.google.com/health-ai-developer-foundations/community-guidelines#contributing)
