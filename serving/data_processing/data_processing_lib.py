@@ -18,8 +18,8 @@
 import io
 
 from absl import logging
+from google.auth import credentials
 from google.cloud import storage
-from google.oauth2 import credentials
 import numpy as np
 from PIL import Image
 import pydicom
