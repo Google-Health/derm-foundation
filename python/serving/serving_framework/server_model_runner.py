@@ -27,7 +27,7 @@ from typing_extensions import override
 
 # pylint: disable = g-direct-tensorflow-import
 # Importing protos should be safe anyway?
-from serving_framework import model_runner
+from serving.serving_framework import model_runner
 from tensorflow.python.framework import tensor_util
 from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2_grpc

@@ -25,7 +25,7 @@ import numpy as np
 import tensorflow as tf
 from typing_extensions import override
 
-from serving_framework import model_runner
+from serving.serving_framework import model_runner
 
 
 class InlineModelRunner(model_runner.ModelRunner):

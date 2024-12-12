@@ -28,9 +28,9 @@ from typing import Any
 
 from typing_extensions import override
 
-from serving_framework import model_runner
-from serving_framework import server_gunicorn
-from serving_framework import server_model_runner
+from serving.serving_framework import model_runner
+from serving.serving_framework import server_gunicorn
+from serving.serving_framework import server_model_runner
 
 
 class InlinePredictionExecutor(server_gunicorn.PredictionExecutor):

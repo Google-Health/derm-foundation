@@ -26,9 +26,9 @@ import os
 from absl import app
 from absl import logging
 
-from serving_framework import inline_prediction_executor
-from serving_framework import server_gunicorn
-import predictor
+from serving.serving_framework import inline_prediction_executor
+from serving.serving_framework import server_gunicorn
+from health_foundations.derm_foundation.serving import predictor
 
 
 def main(argv: Sequence[str]) -> None:

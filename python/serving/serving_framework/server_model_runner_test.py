@@ -18,7 +18,7 @@ import numpy as np
 import tensorflow as tf
 
 from absl.testing import absltest
-from serving_framework import server_model_runner
+from serving.serving_framework import server_model_runner
 from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2_grpc
 

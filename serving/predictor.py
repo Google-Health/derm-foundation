@@ -27,7 +27,7 @@ from google.oauth2 import credentials
 import numpy as np
 
 from data_processing import data_processing_lib
-from serving_framework import model_runner
+from serving.serving_framework import model_runner
 
 
 _INPUT_BYTES_KEY = 'input_bytes'

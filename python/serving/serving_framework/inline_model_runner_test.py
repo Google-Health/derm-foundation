@@ -19,7 +19,7 @@ import tensorflow as tf
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from serving_framework import inline_model_runner
+from serving.serving_framework import inline_model_runner
 
 
 def tensor_equal(first: tf.Tensor, second: tf.Tensor) -> bool:

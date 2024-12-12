@@ -27,7 +27,7 @@ from absl.testing import parameterized
 from data_processing import image_utils
 
 
-_TEST_DATA = 'serving/data_processing/testdata'
+_TEST_DATA = 'python/data_processing/testdata'
 PIXEL_ERROR_MARGIN = 0.0005
 
 # Test image suffixes (16-bit).

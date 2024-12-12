@@ -22,7 +22,7 @@ import requests
 import requests_mock
 
 from absl.testing import absltest
-from serving_framework import server_gunicorn
+from serving.serving_framework import server_gunicorn
 
 
 class DummyHealthCheck:

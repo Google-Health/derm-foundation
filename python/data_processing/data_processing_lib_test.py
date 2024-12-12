@@ -30,8 +30,8 @@ from hcls_imaging_ml_toolkit import dicom_web
 from data_processing import data_processing_lib
 
 
-_TEST_DICOM_PATH = 'serving/data_processing/testdata/fake.dcm'
-_TEST_PNG_PATH = 'serving/data_processing/testdata/fake.png'
+_TEST_DICOM_PATH = 'python/data_processing/testdata/fake.dcm'
+_TEST_PNG_PATH = 'python/data_processing/testdata/fake.png'
 
 
 def _get_test_png_bytes():

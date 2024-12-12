@@ -15,8 +15,8 @@
 from unittest import mock
 
 from absl.testing import absltest
-from serving_framework import inline_prediction_executor
-from serving_framework import server_model_runner
+from serving.serving_framework import inline_prediction_executor
+from serving.serving_framework import server_model_runner
 
 
 class InlinePredictionExecutorTest(absltest.TestCase):
