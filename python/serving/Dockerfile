@@ -32,7 +32,8 @@ RUN apt-get update && \
 # Install dependencies
 RUN python3.12 -m venv /server-env && \
     /server-env/bin/python3.12 -m pip install --upgrade pip && \
-    /server-env/bin/python3.12 -m pip install -r /serving/requirements.txt
+    /server-env/bin/python3.12 -m pip install --require-hashes \
+        -r /serving/requirements.txt
 
 # TODO(b/379159076) - Remove gcloud
 # Install gcloud CLI
