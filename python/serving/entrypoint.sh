@@ -44,7 +44,7 @@ gcloud storage cp "$AIP_STORAGE_URI/*" "$LOCAL_MODEL_PATH/1" --recursive
 
 echo "Launching front end"
 
-/server-env/bin/python3.12 server_gunicorn.py --alsologtostderr \
+/server-env/bin/python3.12 -m serving.server_gunicorn --alsologtostderr \
     --verbosity=1 &
 
 # Wait for any process to exit

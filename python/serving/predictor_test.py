@@ -23,7 +23,7 @@ import tensorflow as tf
 from absl.testing import absltest
 from data_processing import data_processing_lib
 from serving.serving_framework import model_runner
-from health_foundations.derm_foundation.serving import predictor
+from serving import predictor
 
 
 @mock.patch.object(model_runner, "ModelRunner", autospec=True)

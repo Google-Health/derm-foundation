@@ -20,9 +20,6 @@ The serving container can be used in both online and batch prediction workflows:
 
 ## Description of select files and folders
 
-*   [`data_processing/`](./data_processing): A library for data
-    retrieval and processing.
-
 *   [`serving_framework/`](./serving_framework): A library for
     implementing Vertex-compatible HTTP servers.
 
@@ -47,3 +44,8 @@ The serving container can be used in both online and batch prediction workflows:
 
 *   [`server_gunicorn.py`](./server_gunicorn.py): Creates the HTTP server that
     launches the prediction executor.
+
+## Dependencies
+
+*   [`data_processing/`](../data_processing): A library for data
+    retrieval and processing.
