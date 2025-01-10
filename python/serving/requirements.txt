@@ -9,7 +9,7 @@ absl-py==2.1.0 \
     --hash=sha256:7820790efbb316739cde8b4e19357243fc3608a152024288513dd968d7d959ff
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
+    #   -r requirements.in
     #   -r serving_framework/requirements.in
     #   hcls-imaging-ml-toolkit
     #   keras
@@ -439,9 +439,9 @@ itsdangerous==2.2.0 \
     --hash=sha256:c6242fc49e35958c8b15141343aa660db5fc54d4f13a1db01a3f5891b98700ef \
     --hash=sha256:e0050c0b7da1eea53ffaf149c0cfbb5c6e2e2b69c4bef22c81fa6eb73e5f6173
     # via flask
-jinja2==3.1.4 \
-    --hash=sha256:4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369 \
-    --hash=sha256:bc5dd2abb727a5319567b7a813e6a2e7318c39f4f487cfe6c89c6f9c7d25197d
+jinja2==3.1.5 \
+    --hash=sha256:8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb \
+    --hash=sha256:aba0f4dc9ed8013c424088f68a5c226f7d6097ed89b246d7749c2ec4175c6adb
     # via flask
 keras==3.7.0 \
     --hash=sha256:546a64f302e4779c129c06d9826fa586de752cdfd43d7dc4010c31b282587969 \
@@ -613,7 +613,7 @@ numpy==2.0.2 \
     --hash=sha256:f26b258c385842546006213344c50655ff1555a9338e2e5e02a0756dc3e803dd
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
+    #   -r requirements.in
     #   -r serving_framework/requirements.in
     #   h5py
     #   hcls-imaging-ml-toolkit
@@ -946,7 +946,7 @@ tensorflow==2.18.0 \
     --hash=sha256:f8c946df1cb384504578fac1c199a95322373b8e04abd88aa8ae01301df469ea
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
+    #   -r requirements.in
     #   -r serving_framework/requirements.in
     #   hcls-imaging-ml-toolkit
     #   tensorflow-serving-api
