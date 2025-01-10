@@ -1,8 +1,7 @@
 # Derm Foundation
 
 Derm Foundation is a machine learning (ML) model that produces embeddings based
-on dermatology images. The embeddings can be used to
-[efficiently build AI models](https://en.wikipedia.org/wiki/Transfer_learning)
+on dermatology images. The embeddings can be used to efficiently build AI models
 for dermatology image related tasks, requiring less data and less compute than
 having to fully train a model without the embeddings.
 
@@ -23,7 +22,7 @@ build AI models for dermatology image analysis.
 
 *   Explore this repository, which contains [notebooks](./notebooks) for using
     the model from Hugging Face and Vertex AI as well as the
-    [implementation](./serving) of the container that you can deploy to Vertex
+    [implementation](./python/serving) of the container that you can deploy to Vertex
     AI.
 
 *   Visit the model on
