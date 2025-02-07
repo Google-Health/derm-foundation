@@ -36,8 +36,6 @@ We are open to bug reports, pull requests (PR), and other contributions. See
 [community guidelines](https://developers.google.com/health-ai-developer-foundations/community-guidelines)
 for details.
 
-see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
 ## License
 
 While the model is licensed under the
