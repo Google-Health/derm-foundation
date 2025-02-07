@@ -32,7 +32,7 @@ $ python -m unittest discover ...
 -   [ ] I have read and acknowledged Google's Open Source
     [Code of conduct](https://opensource.google/conduct).
 -   [ ] I have read the
-    [Contributing](https://github.com/google-health/derm-foundation/blob/master/docs/CONTRIBUTING.md)
+    [Contributing](https://github.com/google-health/derm-foundation/blob/master/CONTRIBUTING.md)
     page, and I either signed the Google
     [Individual CLA](https://cla.developers.google.com/about/google-individual)
     or am covered by my company's
