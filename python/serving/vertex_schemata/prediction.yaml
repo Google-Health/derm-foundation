@@ -18,11 +18,11 @@ description: The generated model result (i.e. computed vector representation of 
 additionalProperties: false
 oneOf:
   - type: object
-    required: [embedding_vector]
+    required: [embedding]
   - type: object
     required: [error]
 properties:
-  embedding_vector:
+  embedding:
     type: array
     minItems: 1
     description: Vector representation of the input image.
