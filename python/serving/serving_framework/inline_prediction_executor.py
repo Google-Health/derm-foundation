@@ -30,7 +30,6 @@ from typing_extensions import override
 
 from serving.serving_framework import model_runner
 from serving.serving_framework import server_gunicorn
-from serving.serving_framework import server_model_runner
 
 
 class InlinePredictionExecutor(server_gunicorn.PredictionExecutor):
@@ -49,9 +48,11 @@ class InlinePredictionExecutor(server_gunicorn.PredictionExecutor):
       predictor: Callable[
           [dict[str, Any], model_runner.ModelRunner], dict[str, Any]
       ],
+      model_runner_source: Callable[[], model_runner.ModelRunner]
   ):
     self._predictor = predictor
     self._model_runner = None
+    self._model_runner_source = model_runner_source
 
   @override
   def start(self) -> None:
@@ -61,7 +62,7 @@ class InlinePredictionExecutor(server_gunicorn.PredictionExecutor):
     which needs to be done post-fork.
     """
     # Safer to instantiate the RPC stub post-fork.
-    self._model_runner = server_model_runner.ServerModelRunner()
+    self._model_runner = self._model_runner_source()
 
   def predict(self, input_json: dict[str, Any]) -> dict[str, Any]:
     """Executes the given request payload."""

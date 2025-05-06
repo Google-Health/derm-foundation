@@ -23,28 +23,35 @@ class InlinePredictionExecutorTest(absltest.TestCase):
 
   def test_predict_requires_start(self):
     predictor = mock.MagicMock()
-    executor = inline_prediction_executor.InlinePredictionExecutor(predictor)
+    executor = inline_prediction_executor.InlinePredictionExecutor(
+        predictor, server_model_runner.ServerModelRunner
+    )
     with self.assertRaises(RuntimeError):
       executor.predict({"placeholder": "input"})
 
   def test_execute_catches_predictor_exception(self):
     predictor = mock.MagicMock(side_effect=Exception("test error"))
-    executor = inline_prediction_executor.InlinePredictionExecutor(predictor)
+    executor = inline_prediction_executor.InlinePredictionExecutor(
+        predictor, server_model_runner.ServerModelRunner
+    )
     executor.start()
     with self.assertRaises(RuntimeError):
       executor.execute({"placeholder": "input"})
 
   def test_execute_calls_predictor(self):
     predictor = mock.MagicMock(return_value={"placeholder": "output"})
-    executor = inline_prediction_executor.InlinePredictionExecutor(predictor)
     mock_model_runner = mock.create_autospec(
         server_model_runner.ServerModelRunner, instance=True
     )
-    with mock.patch.object(
-        server_model_runner, "ServerModelRunner", autospec=True
-    ) as mock_model_runner_class:
-      mock_model_runner_class.return_value = mock_model_runner
-      executor.start()
+    mock_model_runner_class = mock.create_autospec(
+        server_model_runner.ServerModelRunner, autospec=True
+    )
+    mock_model_runner_class.return_value = mock_model_runner
+    executor = inline_prediction_executor.InlinePredictionExecutor(
+        predictor, mock_model_runner_class
+    )
+
+    executor.start()
     self.assertEqual(
         executor.execute({"placeholder": "input"}),
         {"placeholder": "output"},

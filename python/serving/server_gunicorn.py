@@ -28,6 +28,7 @@ from absl import logging
 
 from serving.serving_framework import inline_prediction_executor
 from serving.serving_framework import server_gunicorn
+from serving.serving_framework import server_model_runner
 from serving import predictor
 
 
@@ -52,7 +53,8 @@ def main(argv: Sequence[str]) -> None:
   logging.info('Launching gunicorn application.')
   server_gunicorn.PredictionApplication(
       inline_prediction_executor.InlinePredictionExecutor(
-          predictor_instance.predict
+          predictor_instance.predict,
+          server_model_runner.ServerModelRunner
       ),
       health_check=health_checker,
       options=options,
