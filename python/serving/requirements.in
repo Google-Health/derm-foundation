@@ -4,3 +4,4 @@ tensorflow~=2.18.0
 
 -r ../data_processing/requirements.in
 -r serving_framework/requirements.in
+-r serving_framework/tensorflow/requirements.in

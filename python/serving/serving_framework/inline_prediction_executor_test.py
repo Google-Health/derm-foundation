@@ -12,11 +12,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from collections.abc import Mapping, Set
 from unittest import mock
+
+import numpy as np
 
 from absl.testing import absltest
 from serving.serving_framework import inline_prediction_executor
-from serving.serving_framework import server_model_runner
+from serving.serving_framework import model_runner
+
+
+class DummyModelRunner(model_runner.ModelRunner):
+  """Dummy model runner for testing."""
+
+  def run_model_multiple_output(
+      self,
+      model_input: Mapping[str, np.ndarray] | np.ndarray,
+      *,
+      model_name: str = "default",
+      model_version: int | None = None,
+      model_output_keys: Set[str],
+  ) -> Mapping[str, np.ndarray]:
+    del model_name, model_version, model_output_keys
+    return {"output_0": np.ones((1, 2), dtype=np.float32)}
 
 
 class InlinePredictionExecutorTest(absltest.TestCase):
@@ -24,7 +42,7 @@ class InlinePredictionExecutorTest(absltest.TestCase):
   def test_predict_requires_start(self):
     predictor = mock.MagicMock()
     executor = inline_prediction_executor.InlinePredictionExecutor(
-        predictor, server_model_runner.ServerModelRunner
+        predictor, DummyModelRunner
     )
     with self.assertRaises(RuntimeError):
       executor.predict({"placeholder": "input"})
@@ -32,7 +50,7 @@ class InlinePredictionExecutorTest(absltest.TestCase):
   def test_execute_catches_predictor_exception(self):
     predictor = mock.MagicMock(side_effect=Exception("test error"))
     executor = inline_prediction_executor.InlinePredictionExecutor(
-        predictor, server_model_runner.ServerModelRunner
+        predictor, DummyModelRunner
     )
     executor.start()
     with self.assertRaises(RuntimeError):
@@ -41,10 +59,10 @@ class InlinePredictionExecutorTest(absltest.TestCase):
   def test_execute_calls_predictor(self):
     predictor = mock.MagicMock(return_value={"placeholder": "output"})
     mock_model_runner = mock.create_autospec(
-        server_model_runner.ServerModelRunner, instance=True
+        DummyModelRunner, instance=True
     )
     mock_model_runner_class = mock.create_autospec(
-        server_model_runner.ServerModelRunner, autospec=True
+        DummyModelRunner, autospec=True
     )
     mock_model_runner_class.return_value = mock_model_runner
     executor = inline_prediction_executor.InlinePredictionExecutor(

@@ -7,8 +7,5 @@ numpy<=2.0.2 # bypassing faulty version restriction in tritonclient
 requests~=2.32.3
 # TODO: b/375469331 - Enable testing with most current requests-mock release.
 requests-mock==1.9.3
-tensorflow~=2.18.0
-tensorflow-serving-api~=2.18.0
-tensorflow-io-gcs-filesystem>=0.23.1
 setuptools~=75.6.0
 typing-extensions~=4.12.2

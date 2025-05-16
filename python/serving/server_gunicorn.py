@@ -28,7 +28,7 @@ from absl import logging
 
 from serving.serving_framework import inline_prediction_executor
 from serving.serving_framework import server_gunicorn
-from serving.serving_framework import server_model_runner
+from serving.serving_framework.tensorflow import server_model_runner
 from serving import predictor
 
 
