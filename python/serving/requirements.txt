@@ -9,7 +9,7 @@ absl-py==2.1.0 \
     --hash=sha256:7820790efbb316739cde8b4e19357243fc3608a152024288513dd968d7d959ff
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
+    #   -r requirements.in
     #   -r serving_framework/requirements.in
     #   hcls-imaging-ml-toolkit
     #   keras
@@ -600,7 +600,7 @@ numpy==2.0.2 \
     --hash=sha256:f26b258c385842546006213344c50655ff1555a9338e2e5e02a0756dc3e803dd
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
+    #   -r requirements.in
     #   -r serving_framework/requirements.in
     #   h5py
     #   hcls-imaging-ml-toolkit
@@ -925,7 +925,7 @@ tensorflow==2.18.0 \
     --hash=sha256:f8c946df1cb384504578fac1c199a95322373b8e04abd88aa8ae01301df469ea
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
+    #   -r requirements.in
     #   -r serving_framework/requirements.in
     #   hcls-imaging-ml-toolkit
     #   tensorflow-serving-api
@@ -1077,9 +1077,9 @@ zipp==3.21.0 \
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==75.6.0 \
-    --hash=sha256:8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6 \
-    --hash=sha256:ce74b49e8f7110f9bf04883b730f4765b774ef3ef28f722cce7c273d253aaf7d
+setuptools==78.1.1 \
+    --hash=sha256:c3a9c4211ff4c309edb8b8c4f1cbfa7ae324c4ba9f91ff254e3d305b9fd54561 \
+    --hash=sha256:fcc17fd9cd898242f6b4adfaca46137a9edef687f43e6f78469692a5e70d851d
     # via
     #   -r serving_framework/requirements.in
     #   tensorboard
