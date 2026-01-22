@@ -9,7 +9,7 @@ absl-py==2.1.0 \
     --hash=sha256:7820790efbb316739cde8b4e19357243fc3608a152024288513dd968d7d959ff
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
+    #   -r requirements.in
     #   -r serving_framework/requirements.in
     #   hcls-imaging-ml-toolkit
     #   keras
@@ -600,7 +600,7 @@ numpy==2.0.2 \
     --hash=sha256:f26b258c385842546006213344c50655ff1555a9338e2e5e02a0756dc3e803dd
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
+    #   -r requirements.in
     #   -r serving_framework/requirements.in
     #   h5py
     #   hcls-imaging-ml-toolkit
@@ -721,6 +721,7 @@ packaging==24.2 \
     #   keras
     #   tensorboard
     #   tensorflow
+    #   wheel
 pillow==11.0.0 \
     --hash=sha256:00177a63030d612148e659b55ba99527803288cea7c75fb05766ab7981a8c1b7 \
     --hash=sha256:006bcdd307cc47ba43e924099a038cbf9591062e6c50e570819743f5607404f5 \
@@ -925,8 +926,8 @@ tensorflow==2.18.0 \
     --hash=sha256:f8c946df1cb384504578fac1c199a95322373b8e04abd88aa8ae01301df469ea
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
-    #   -r serving_framework/requirements.in
+    #   -r requirements.in
+    #   -r serving_framework/tensorflow/requirements.in
     #   hcls-imaging-ml-toolkit
     #   tensorflow-serving-api
 tensorflow-io-gcs-filesystem==0.37.1 \
@@ -946,11 +947,11 @@ tensorflow-io-gcs-filesystem==0.37.1 \
     --hash=sha256:fbb33f1745f218464a59cecd9a18e32ca927b0f4d77abd8f8671b645cc1a182f \
     --hash=sha256:fe8dcc6d222258a080ac3dfcaaaa347325ce36a7a046277f6b3e19abc1efb3c5 \
     --hash=sha256:ffebb6666a7bfc28005f4fbbb111a455b5e7d6cd3b12752b7050863ecb27d5cc
-    # via -r serving_framework/requirements.in
+    # via -r serving_framework/tensorflow/requirements.in
 tensorflow-serving-api==2.18.0 \
     --hash=sha256:97c967b4638b90dd8ed5ded2e9c7a66f7d97089387d7504a165a77e1a1cba10c
     # via
-    #   -r serving_framework/requirements.in
+    #   -r serving_framework/tensorflow/requirements.in
     #   hcls-imaging-ml-toolkit
 termcolor==2.5.0 \
     --hash=sha256:37b17b5fc1e604945c2642c872a3764b5d547a48009871aea3edd3afa180afb8 \
@@ -984,9 +985,9 @@ werkzeug==3.1.3 \
     # via
     #   flask
     #   tensorboard
-wheel==0.45.1 \
-    --hash=sha256:661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729 \
-    --hash=sha256:708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248
+wheel==0.46.2 \
+    --hash=sha256:33ae60725d69eaa249bc1982e739943c23b34b58d51f1cb6253453773aca6e65 \
+    --hash=sha256:3d79e48fde9847618a5a181f3cc35764c349c752e2fe911e65fa17faab9809b0
     # via astunparse
 wrapt==1.17.2 \
     --hash=sha256:08e7ce672e35efa54c5024936e559469436f8b8096253404faeb54d2a878416f \
