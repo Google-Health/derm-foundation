@@ -9,7 +9,7 @@ absl-py==2.1.0 \
     --hash=sha256:7820790efbb316739cde8b4e19357243fc3608a152024288513dd968d7d959ff
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
+    #   -r requirements.in
     #   -r serving_framework/requirements.in
     #   hcls-imaging-ml-toolkit
     #   keras
@@ -600,7 +600,7 @@ numpy==2.0.2 \
     --hash=sha256:f26b258c385842546006213344c50655ff1555a9338e2e5e02a0756dc3e803dd
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
+    #   -r requirements.in
     #   -r serving_framework/requirements.in
     #   h5py
     #   hcls-imaging-ml-toolkit
@@ -836,9 +836,9 @@ pyasn1-modules==0.4.1 \
     --hash=sha256:49bfa96b45a292b711e986f222502c1c9a5e1f4e568fc30e2574a6c7d07838fd \
     --hash=sha256:c28e2dbf9c06ad61c71a075c7e0f9fd0f1b0bb2d2ad4377f240d33ac2ab60a7c
     # via google-auth
-pydicom==3.0.1 \
-    --hash=sha256:7b8be344b5b62493c9452ba6f5a299f78f8a6ab79786c729b0613698209603ec \
-    --hash=sha256:db32f78b2641bd7972096b8289111ddab01fb221610de8d7afa835eb938adb41
+pydicom==3.0.2 \
+    --hash=sha256:5942bfc2d72c6fa4b3b5b62c527f54b7f2355f21d6f5d296df6bb30188df6a4f \
+    --hash=sha256:abf971a5440f84dbaf42c4b6758e30e62480902584f8b270b9a5d146e278a07b
     # via -r ../data_processing/requirements.in
 pygments==2.19.1 \
     --hash=sha256:61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f \
@@ -925,8 +925,8 @@ tensorflow==2.18.0 \
     --hash=sha256:f8c946df1cb384504578fac1c199a95322373b8e04abd88aa8ae01301df469ea
     # via
     #   -r ../data_processing/requirements.in
-    #   -r derm_requirements.in
-    #   -r serving_framework/requirements.in
+    #   -r requirements.in
+    #   -r serving_framework/tensorflow/requirements.in
     #   hcls-imaging-ml-toolkit
     #   tensorflow-serving-api
 tensorflow-io-gcs-filesystem==0.37.1 \
@@ -946,11 +946,11 @@ tensorflow-io-gcs-filesystem==0.37.1 \
     --hash=sha256:fbb33f1745f218464a59cecd9a18e32ca927b0f4d77abd8f8671b645cc1a182f \
     --hash=sha256:fe8dcc6d222258a080ac3dfcaaaa347325ce36a7a046277f6b3e19abc1efb3c5 \
     --hash=sha256:ffebb6666a7bfc28005f4fbbb111a455b5e7d6cd3b12752b7050863ecb27d5cc
-    # via -r serving_framework/requirements.in
+    # via -r serving_framework/tensorflow/requirements.in
 tensorflow-serving-api==2.18.0 \
     --hash=sha256:97c967b4638b90dd8ed5ded2e9c7a66f7d97089387d7504a165a77e1a1cba10c
     # via
-    #   -r serving_framework/requirements.in
+    #   -r serving_framework/tensorflow/requirements.in
     #   hcls-imaging-ml-toolkit
 termcolor==2.5.0 \
     --hash=sha256:37b17b5fc1e604945c2642c872a3764b5d547a48009871aea3edd3afa180afb8 \
